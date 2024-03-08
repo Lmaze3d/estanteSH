@@ -292,7 +292,7 @@ button {
 
     .book {
         width: 4px; /*ancho libros*/ 
-        height: 72px; /*165px*/
+        height: 165px; /*165px*/
         background-color: #00000090;
         border: 1px solid #000;
         display: flex;
