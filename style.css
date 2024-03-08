@@ -1,0 +1,338 @@
+body {
+    background-color: #000000;
+    background-image: url('test_01_tras.png');/*'test_01_tras.png'*/
+    background-repeat: no-repeat;
+    background-size: 100% 95%; /*celu peque 360px 571px*/
+    background-position-y: 16.8vh; /*16.6vh*/
+    /* background-position-x: 50%; */
+    /* justify-content: center;  */
+
+    /* background-position-x: center; */
+    /* background-position-y: center; */
+     /* background-position: 10 center ; */
+     position: relative; /* Establece la posición relativa para el cuerpo */    
+     
+}
+
+
+/*Estilo generales boton retorno*/
+button {
+    background-color: #4CAF50; 
+    background: -webkit-gradient(
+        linear, left top, left bottom, from(#ffffff), to(#0199ff));
+    border: 2px solid #000000;
+    color: rgb(0, 0, 0);
+    padding: 2px 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 40px 110px; /*posicion boton y x */
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    /* z-index: -1; */
+  }
+  
+
+
+@keyframes cambioColor {
+    
+    0% {
+        background-color: #00ff62; /* Color inicial */
+    }
+    50% {
+        background-color: #2e2e2e; /* Color intermedio */
+    }
+    100% {
+        background-color: #00ff62; /* Color final */
+    }
+}
+
+
+.shelf {
+    display: grid;
+    grid-template-columns: repeat(76, 1fr); /*cantidad de columnas lateral*/
+    /*gap: 1vw; /*separacion entre libros-horizontal*/
+    /*margin-bottom: 14px; /*separacion entre estantes*/
+    /* margin-top: 50px; */
+    margin-left: 2%;
+    margin-right: 2%;
+    
+    
+}
+
+.book {
+    width: 1vw; /*ancho libros*/ 
+    height: 8vh; /*16vh*/
+    /* background-color: #336521; color libros estaticos */
+    background-color: hsla(24, 42%, 33%, 0.7); /*hue sat lum trans */
+    /* border: 1px solid #000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    visibility: visible; /* Establecer la visibilidad inicial de los libros */
+    color:transparent;
+    margin-top: 0.6vh; /*separacion entre estantes*/
+    
+}
+
+.selected {
+    background-color: #00ff62; /*color seleccionado*/
+    /*  color: rgb(255, 255, 255); 
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        text-shadow: 4px 4px 6px #000000;
+        font-family: Arial, Helvetica, sans-serif;
+        z-index: 0;
+        writing-mode:vertical-rl;/*----Texto vertical-------*/
+        /* text-orientation:sideways;  */
+    animation: cambioColor .5s infinite; /* Aplicar la animación al elemento */
+}
+
+.search-container {
+    margin-bottom: 2vh; /*separacion entre busqueda y libros*/
+    margin-top: .1vh; /*separacion superior*/
+    /* margin-left: 1px; */
+    /* background-color: red; */
+    /* width: 359px; */
+    
+
+}
+    
+/* #shelf2{
+    width: 385px;
+    height: 135px;
+    background: red;
+    background-color: rgb(40, 135, 187);
+    border: 5px solid rebeccapurple;
+} */
+
+.search-container select{ /*estilo desplegable(select)*/
+    width: 93%;
+    height: 5vh;
+    margin-bottom: 5%; /*espacio entre desplegable y busqueda*/
+    font-size: 3vh;
+    font-weight: bold;
+    margin-left: 5%; /*centrado*/
+    text-transform: capitalize; /*Primeras letras Capital*/
+    background: rgb(179, 255, 240);
+    margin-top: 10px; /*separacion sup. despleg.*/
+    border-color: rgb(0, 0, 0);
+    border-width: 0.4vh;
+    box-shadow: 0px 0px 4px 4px  rgba(255, 255, 255, 0.6);
+}
+
+.search-container input { /*estilo cuadro de busqueda(input)*/
+    width: 70%;
+    height: 4vh;
+    padding: 1vw; /*Separacion search-libros*/
+    font-size: 24px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    margin-right: 10px;
+    /* margin-top: 15px; */
+    margin-bottom: 10px; 
+    background: rgb(206, 206, 206);
+    /* border: 3px solid #b3b3b3; */
+    box-shadow: 0px 0px 4px 4px  rgba(255, 255, 255, 0.6); /*-x -y -blur -spread*/
+    margin-left: 14%;
+    text-transform: lowercase; /*todo minusculas*/
+    border-color: rgb(0, 0, 0);
+    border-width: 0.4vh;
+    
+}
+
+
+  
+
+@media screen and (max-width: 360px) { /*----------max-width: 360px-------------------pantallas pequeñas--------------------------------*/
+    body {
+            background: #01386e;
+    
+            background-image: url('test_01_tras.png');
+            background-repeat: no-repeat;
+            background-size: 100% 510px;
+            background-position-y: 100px;
+            background-position-x: 50%;
+            
+            
+        }
+
+    .search-container select { /*estilo desplegable(select)*/
+        width: 300px;
+        height: 30px;
+        font-size: 16px;
+        margin-bottom: 11px; /*espacio entre desplegable y busqueda*/
+        /* border-radius: 2px; */
+        margin-left: 16px;
+        background: rgb(156, 243, 156);
+        
+    }
+
+    .search-container input { /*estilo search(input)*/
+        width: 250px;
+        height: 20px;
+        padding: 1vw;
+        margin-right: 10px;
+        margin-bottom: 10px; 
+        font-size: 16px;
+        font-weight: bold;
+        color: #000000;
+        margin-left: 38px;
+        margin-top: 7px;
+        box-shadow: 0px 0px 6px 4px  rgba(0, 0, 0, 0.592); /*-x -y -blur -spread*/
+    }
+
+    .book {
+        width: 3.2px; /*ancho libros*/ 
+        height: 56px; /*122px*/
+        background-color: #0000009a;
+        /* border: 1px solid #000; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        visibility: visible; /* Establecer la visibilidad inicial de los libros */
+        color:transparent;
+        margin-top: 5px; /*separacion entre estantes*/
+    }
+
+    .selected {
+        background-color: #ffffff;
+    }
+    
+    .search-container {
+       margin-bottom: 3px; /*separacion entre busqueda y libros*/
+       margin-top: 15px; /*separacion superior*/
+        
+    }
+
+
+    .shelf {
+        display: grid;
+        grid-template-columns: repeat(76, 1fr);
+        gap: 1px; /*separacion entre libros-horizontal*/
+        margin-bottom: 18px; /*separacion entre estantes*/
+        
+    }
+
+    
+
+}
+
+@media screen and (min-width: 720px) { /*estilos <<<<<    desktop   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+    body {
+        /* background: linear-gradient(to bottom,rgb(0, 0, 0),rgb(22, 32, 88),rgb(255, 255, 255)); */
+        background: rgb(75, 107, 93);
+        background-image: url('test_01_tras.png');
+        background-repeat: no-repeat;
+        background-size: 610px 711px;
+        background-position-y: 438%; /*17vh*/
+        /* background-position-x: 50%; */
+        background-position-x: center;
+        width: 29%; 
+        margin: 0 auto;
+        /* margin-left: 36%; */
+        
+        
+    }
+   
+
+/*Estilo generales boton retorno*/
+button {
+    background-color: #4CAF50; 
+    background: -webkit-gradient(
+        linear, left top, left bottom, from(#ffffff), to(#005a96));
+    border: 2px solid #000000;
+    color: rgb(0, 0, 0);
+    padding: 2px 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 40px 160px; /*posicion boton y x */
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    /* z-index: -1; */
+  }
+
+
+    .search-container select { /*estilo desplegable(select)*/
+        height: 30px;
+        width: 400px;
+        font-size: 16px;
+        margin-bottom: 20px; /*espacio entre desplegable y busqueda*/
+        margin-top: 5%;
+        border-radius: 4px;
+        margin-left: 10%;
+        cursor: pointer;
+        color: #000;
+        box-shadow: 0px 0px 4px 4px  rgba(0, 0, 0, 0.6);
+        
+    }
+    .search-container input { /*estilo search(input)*/
+        height: 25px;
+        width: 300px;
+        padding: .3vw; /*Separacion search-libros*/
+        margin-top: 2%;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+        color: #000000;
+        box-shadow: 0px 0px 4px 4px  rgba(0, 0, 0, 0.6); /*-x -y -blur -spread*/
+        margin-left: 18%;
+
+        
+
+    }
+
+    .book {
+        width: 4px; /*ancho libros*/ 
+        height: 72px; /*165px*/
+        background-color: #00000090;
+        border: 1px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        visibility: visible; /* Establecer la visibilidad inicial de los libros */
+        color:transparent;
+        margin-top: 17px; /*separacion entre estantes*/
+        
+        
+    }
+
+    .selected { /*seleccionado*/
+        background-color: #ffffff;
+        
+        z-index: 0;
+        
+    }
+    
+    .search-container {
+        margin-bottom: 2.5%; /*separacion entre busqueda y libros*/
+        /*margin-top: 52px /*separacion superior*/
+        /*overflow-y: auto; /* muestra barra */
+        /* background: red; */
+        
+    }
+
+
+    .shelf {
+        display: grid;
+        grid-template-columns: repeat(76, 1fr);
+        gap: 1.3px; /*separacion entre libros-horizontal*/
+        margin-bottom: 18px; /*separacion entre estantes*/
+        justify-content: center;
+        /* background: greenyellow; */
+        
+        
+        
+    }
+
+}
+
